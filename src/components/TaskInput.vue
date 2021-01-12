@@ -65,5 +65,7 @@ export default {
   cursor: pointer;
   background-color: #005c00;
   color: #fff;
+  font-size: 20px;
+  font-family:inherit;
 }
 </style>
