@@ -1,9 +1,9 @@
 <template>
-  <div class="header">
+  <header class="header">
     <Container>
       <h1 class="header__title">To-Do List</h1>
     </Container>
-  </div>
+  </header>
 </template>
 
 <script>
