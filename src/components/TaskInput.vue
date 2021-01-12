@@ -23,8 +23,6 @@ import Container from "./Container.vue";
 
 export default {
   name: "TaskInput",
-  //props: ["newTask"],
-  //newTask: null,
   components: {
     Container,
   },
@@ -49,6 +47,7 @@ export default {
 <style scoped>
 .taskInput__flex {
   display: flex;
+  padding: 20px;
 }
 .taskInput {
   padding: 10px;

@@ -6,15 +6,12 @@
       v-bind:newTask="newTask"
     />
     <Container>
-      <ul class="taskList">
-        <TaskItem
-          v-for="(task, index) in tasks"
-          v-bind:key="index"
-          v-bind:task="task"
-          @removeClicked="removeTask"
-          @toggleDone="toggleDone"
-        />
-      </ul>
+      <TasksItems
+        class="taskList"
+        v-bind:tasks="tasks"
+        @removeClicked="removeTask"
+        @toggleDone="toggleDone"
+      />
     </Container>
   </main>
 </template>
@@ -22,12 +19,12 @@
 <script>
 import Container from "./Container.vue";
 import TaskInput from "./TaskInput.vue";
-import TaskItem from "./TaskItem.vue";
+import TasksItems from "./TasksItems.vue";
 
 export default {
   components: {
     TaskInput,
-    TaskItem,
+    TasksItems,
     Container,
   },
   data() {
@@ -71,8 +68,6 @@ export default {
 <style scoped>
 .taskInput__container {
   background-color: #000;
-  padding: 20px;
-  width: 100%;
 }
 .taskList {
   list-style: none;
