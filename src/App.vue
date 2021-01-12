@@ -6,18 +6,17 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import TodoBody from './components/TodoBody.vue'
+import Header from "./components/Header.vue";
+import TodoBody from "./components/TodoBody.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    TodoBody
-  }
-}
+    TodoBody,
+  },
+};
 </script>
 
 <style>
-
 </style>
