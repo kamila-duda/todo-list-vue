@@ -7,11 +7,12 @@
         placeholder="Type what to do..."
         v-model="newTask"
         ref="taskInput"
+        autofocus
       />
       <input
         type="button"
         class="taskInput__addButton"
-        @click="addTask"
+        @click="addTask(), focusInput()"
         value="Dodaj"
       />
     </Container>
@@ -36,9 +37,9 @@ export default {
       this.$emit("addedTask", this.newTask);
       this.newTask = "";
     },
-    //   focusInput() {
-    //       this.$refs.taskInput.focus();
-    //   }
+    focusInput() {
+      this.$refs.taskInput.focus();
+    },
   },
 };
 </script>
@@ -66,6 +67,6 @@ export default {
   background-color: #005c00;
   color: #fff;
   font-size: 20px;
-  font-family:inherit;
+  font-family: inherit;
 }
 </style>
