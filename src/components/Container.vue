@@ -16,5 +16,6 @@ export default {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 </style>
