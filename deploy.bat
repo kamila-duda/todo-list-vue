@@ -7,6 +7,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:kamila-duda/todo-list-vue.git main:gh-pages
+git push -f git@github.com:kamila-duda/todo-list-vue.git master:gh-pages
 
 cd ..
