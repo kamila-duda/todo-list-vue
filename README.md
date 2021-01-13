@@ -21,10 +21,10 @@ View live demo: https://kamila-duda.github.io/todo-list-vue/
 This is a simple to-do list in Vue.js. Created for exercise my knowledge about Vue.js basic. 
 
 
-How application works:
+### How application works:
 ![gif of how application works](https://github.com/kamila-duda/todo-list-vue/blob/main/src/assets/todo-vue.gif?raw=true)
 
-Mobile view:
+### Mobile view:
 ![mobile view](https://github.com/kamila-duda/todo-list-vue/blob/main/src/assets/mobile-view.PNG?raw=true)
 
 ## Technologies
