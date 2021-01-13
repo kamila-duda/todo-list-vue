@@ -15,7 +15,7 @@ body {
   position: relative;
   min-height: 98vh;
 }
-body::before{
+body::before {
   content: "";
   position: absolute;
   width: 100%;
