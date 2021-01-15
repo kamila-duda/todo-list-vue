@@ -34,8 +34,11 @@ export default {
   },
   methods: {
     addTask() {
-      this.$emit("addedTask", this.newTask);
-      this.newTask = "";
+      this.newTask = this.newTask.trim();
+      if (this.newTask.length > 1) {
+        this.$emit("addedTask", this.newTask);
+        this.newTask = "";
+      }
     },
     focusInput() {
       this.$refs.taskInput.focus();
