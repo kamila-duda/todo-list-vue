@@ -6,7 +6,12 @@
       v-bind:newTask="newTask"
     />
     <Container>
+      <p class="taskList__empty" v-if="tasks.length < 1">
+        Nie masz jeszcze żadnych zadań. Dodaj zadanie, by o niczym nie zapomnieć
+        😉
+      </p>
       <TasksItems
+        v-else
         class="taskList"
         v-bind:tasks="tasks"
         @removeClicked="removeTask"
@@ -30,17 +35,13 @@ export default {
   data() {
     return {
       newTask: null,
-      tasks: [
-        { id: 1, title: "Learn to Vue.js", done: true },
-        { id: 2, title: "Learn to React Native", done: false },
-      ],
-      nextTaskId: 3,
+      tasks: JSON.parse(localStorage.getItem("tasks")) || [],
     };
   },
   methods: {
     addTask(newTask) {
       this.tasks.push({
-        id: this.nextTaskId++,
+        id: newTask,
         title: newTask,
         done: false,
       });
@@ -56,9 +57,15 @@ export default {
       } else {
         this.tasks[index].done = true;
       }
+      localStorage.setItem("tasks", JSON.stringify(this.tasks));
     },
     focusInput() {
       this.$refs.taskInput.focus();
+    },
+  },
+  watch: {
+    tasks: function () {
+      localStorage.setItem("tasks", JSON.stringify(this.tasks));
     },
   },
 };
@@ -72,5 +79,14 @@ export default {
 .taskList {
   list-style: none;
   padding: 0;
+}
+.taskList__empty {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px 20px;
+  background-color: #fff;
 }
 </style>
